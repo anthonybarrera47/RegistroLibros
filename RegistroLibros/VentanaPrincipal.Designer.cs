@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,9 @@
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroToolStripMenuItem1});
+            this.registroToolStripMenuItem1,
+            this.toolStripMenuItem1,
+            this.tiposToolStripMenuItem});
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
             this.registroToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.registroToolStripMenuItem.Text = "Registro";
@@ -60,12 +64,25 @@
             this.registroToolStripMenuItem1.Text = "Registro";
             this.registroToolStripMenuItem1.Click += new System.EventHandler(this.RegistroItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 6);
+            // 
+            // tiposToolStripMenuItem
+            // 
+            this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
+            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.tiposToolStripMenuItem.Text = "Tipos";
+            this.tiposToolStripMenuItem.Click += new System.EventHandler(this.tiposToolStripMenuItem_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "VentanaPrincipal";
             this.Text = "Registrador de Libros";
@@ -82,6 +99,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem;
     }
 }
 

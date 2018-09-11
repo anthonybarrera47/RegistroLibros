@@ -39,9 +39,9 @@
             this.Nuevo = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
-            this.TipoIdNumericUpDowm = new System.Windows.Forms.NumericUpDown();
+            this.tipoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.Nuevobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDNumericoUpDowm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDowm)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -153,20 +153,31 @@
             this.Eliminar.UseVisualStyleBackColor = true;
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
-            // TipoIdNumericUpDowm
+            // tipoIdComboBox
             // 
-            this.TipoIdNumericUpDowm.Location = new System.Drawing.Point(116, 139);
-            this.TipoIdNumericUpDowm.Name = "TipoIdNumericUpDowm";
-            this.TipoIdNumericUpDowm.Size = new System.Drawing.Size(120, 22);
-            this.TipoIdNumericUpDowm.TabIndex = 12;
+            this.tipoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoIdComboBox.FormattingEnabled = true;
+            this.tipoIdComboBox.Location = new System.Drawing.Point(116, 139);
+            this.tipoIdComboBox.Name = "tipoIdComboBox";
+            this.tipoIdComboBox.Size = new System.Drawing.Size(186, 24);
+            this.tipoIdComboBox.TabIndex = 13;
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Location = new System.Drawing.Point(308, 140);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(28, 23);
+            this.Nuevobutton.TabIndex = 14;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
             // 
             // RegistroLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(348, 280);
-            this.Controls.Add(this.TipoIdNumericUpDowm);
+            this.ClientSize = new System.Drawing.Size(379, 280);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.tipoIdComboBox);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.Nuevo);
@@ -182,7 +193,6 @@
             this.Name = "RegistroLibro";
             this.Text = "Registro Libro";
             ((System.ComponentModel.ISupportInitialize)(this.IDNumericoUpDowm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TipoIdNumericUpDowm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +211,7 @@
         private System.Windows.Forms.Button Nuevo;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Button Eliminar;
-        private System.Windows.Forms.NumericUpDown TipoIdNumericUpDowm;
+        private System.Windows.Forms.ComboBox tipoIdComboBox;
+        private System.Windows.Forms.Button Nuevobutton;
     }
 }

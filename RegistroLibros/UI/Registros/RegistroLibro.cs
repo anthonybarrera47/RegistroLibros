@@ -17,14 +17,21 @@ namespace RegistroLibros.UI.Registros
         public RegistroLibro()
         {
             InitializeComponent();
+            LlenarComboBox();
+        }
+
+        private void LlenarComboBox()
+        {
+            tipoIdComboBox.DataSource = TiposBLL.GetList(x => true);
+            tipoIdComboBox.ValueMember = "TipoId";
+            tipoIdComboBox.DisplayMember = "Descripcion";
         }
 
         private void Limpiar()
         {
             IDNumericoUpDowm.Value = 0;
             DescripcionTextBox.Text = string.Empty;
-            SiglasTextBox.Text = string.Empty;
-            TipoIdNumericUpDowm.Value = 0;
+            SiglasTextBox.Text = string.Empty; 
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
@@ -38,7 +45,7 @@ namespace RegistroLibros.UI.Registros
             libro.LibroId = Convert.ToInt32(IDNumericoUpDowm.Value);
             libro.Descripcion = DescripcionTextBox.Text;
             libro.Siglas = SiglasTextBox.Text;
-            libro.TipoId = Convert.ToInt32(TipoIdNumericUpDowm.Value);
+            libro.TipoId = (int)tipoIdComboBox.SelectedValue;
             return libro;
         }
 
@@ -74,7 +81,7 @@ namespace RegistroLibros.UI.Registros
         {
             bool paso = true;
 
-            if(string.IsNullOrWhiteSpace(DescripcionTextBox.Text) || string.IsNullOrWhiteSpace(SiglasTextBox.Text) || TipoIdNumericUpDowm.Value == 0)
+            if(string.IsNullOrWhiteSpace(DescripcionTextBox.Text) || string.IsNullOrWhiteSpace(SiglasTextBox.Text)  )
             {
                 if(string.IsNullOrWhiteSpace(DescripcionTextBox.Text))
                 {
@@ -84,10 +91,7 @@ namespace RegistroLibros.UI.Registros
                 {
                     MessageBox.Show("El Campo Siglas no puede estar vacio");
                 }
-                if(TipoIdNumericUpDowm.Value == 0)
-                {
-                    MessageBox.Show("El campo TipoID no puede ser 0");
-                }
+                
                 paso = false;
             }
             return paso;
@@ -98,7 +102,7 @@ namespace RegistroLibros.UI.Registros
             IDNumericoUpDowm.Value = libro.LibroId;
             DescripcionTextBox.Text = libro.Descripcion;
             SiglasTextBox.Text = libro.Siglas;
-            TipoIdNumericUpDowm.Value = libro.TipoId;
+            tipoIdComboBox.SelectedValue = libro.TipoId;
 
         }
 
@@ -136,7 +140,7 @@ namespace RegistroLibros.UI.Registros
         {
             bool paso = true;
 
-            if (DescripcionTextBox.Text == string.Empty || SiglasTextBox.Text == string.Empty || TipoIdNumericUpDowm.Value == 0)
+            if (DescripcionTextBox.Text == string.Empty || SiglasTextBox.Text == string.Empty )
             {
                 if (DescripcionTextBox.Text == string.Empty)
                 {
@@ -146,10 +150,7 @@ namespace RegistroLibros.UI.Registros
                 {
                     MessageBox.Show("El Campo Siglas no puede estar vacio");
                 }
-                if (TipoIdNumericUpDowm.Value == 0)
-                {
-                    MessageBox.Show("El campo TipoID no puede ser 0");
-                }
+                 
                 paso = false;
             }
             return paso;

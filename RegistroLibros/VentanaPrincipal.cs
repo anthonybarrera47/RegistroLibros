@@ -27,7 +27,15 @@ namespace RegistroLibros
         private void RegistroItem_Click(object sender, EventArgs e)
         {
             RegistroLibro rl = new RegistroLibro();
-            rl.ShowDialog();
+            rl.MdiParent = this;
+            rl.Show();
+        }
+
+        private void tiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTipos rTipos = new rTipos();
+            rTipos.MdiParent = this;
+            rTipos.Show();
         }
     }
 }

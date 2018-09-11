@@ -53,13 +53,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\LibrosBLL.cs" />
+    <Compile Include="BLL\TiposBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Libros.cs" />
+    <Compile Include="Entidades\Tipos.cs" />
     <Compile Include="UI\Registros\RegistroLibro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\RegistroLibro.Designer.cs">
       <DependentUpon>RegistroLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rTipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rTipos.Designer.cs">
+      <DependentUpon>rTipos.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
@@ -82,10 +90,15 @@
     <EmbeddedResource Include="UI\Registros\RegistroLibro.resx">
       <DependentUpon>RegistroLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rTipos.resx">
+      <DependentUpon>rTipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RegistroLibros.Entidades.Libros.datasource" />
+    <None Include="Properties\DataSources\RegistroLibros.Entidades.Tipos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

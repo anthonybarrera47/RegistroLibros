@@ -28,6 +28,10 @@ namespace RegistroLibros.BLL
             {
                 if(db.libro.Add(libro)!=null)
                 {
+                    var tipo = db.Tipos.Find(libro.TipoId);
+                    tipo.Cantidad += 1;
+                    db.Entry(tipo).State = EntityState.Modified;
+
                     db.SaveChanges();
                     paso = true;
                 }
@@ -71,6 +75,11 @@ namespace RegistroLibros.BLL
             try
             {
                 Libros libro = db.libro.Find(id);
+
+                var tipo = db.Tipos.Find(libro.TipoId);
+                tipo.Cantidad -= 1;
+                db.Entry(tipo).State = EntityState.Modified;
+
                 db.libro.Remove(libro);
                 if(db.SaveChanges()>0)
                 {
